@@ -6,8 +6,11 @@ This is the code and data for an R Shiny dashboard, which is associated with the
 ### Abstract
 <i>Background.</i> The United States (US) population largely resides in urban areas where climate change is projected to increase temperatures and the frequency of heat events. Extreme heat has been linked to increased cardiovascular disease (CVD) risk, yet little is known about this association across urban heat islands (UHIs). 
 Objective. To identify the US urban populations at the highest risk of heat-related CVD morbidity and characterize the heat-attributable burden. 
+
 <i>Methods.</i> We obtained daily counts of CVD hospitalizations among Medicare enrollees, aged 65-114, in 120 metropolitan statistical areas (MSAs) in the contiguous US between 2000-2017. Local average temperatures were estimated by interpolating daily monitor observations. A quasi-Poisson regression with distributed lag non-linear models was applied to estimate MSA-specific associations between temperature and hospitalization. These associations were pooled using multivariate meta-analyses. Stratified analyses were performed by age, sex, race, and chronic condition status in low and high UHI intensity (UHII) areas, estimated from satellite-derived temperatures in urban versus non-urban areas. We also calculated the number of CVD hospitalizations attributable to heat. 
+
 <i>Results.</i> Extreme heat (99th percentile, ~28.6°C) increased CVD hospitalization risk by 1.5% (95% CI: 0.4%, 2.6%), with considerable MSA-to-MSA variation. There were an estimated 37,028 (95% CI: 35,741, 37,988) heat-attributable admissions, with most due to extreme temperatures. The risk difference between high and low UHII areas was 1.4% (2.4% [95% CI: 0.4%, 4.3%] in high vs. 1.0% [95% CI: -0.8%, 2.8%] in low). High UHII accounted for 35% of the total burden and disproportionately impacted already heat-vulnerable populations, with a higher heat-related risk and burden among female, Black, and older (age 75-114) enrollees and those with diabetes and chronic kidney disease.
+
 <i>Conclusions.</i> Extreme heat increases the risk and burden of cardiovascular morbidity among older adults in US urban areas. UHIs exacerbate the adverse impacts of heat, especially among those with existing vulnerabilities.
 
 
