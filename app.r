@@ -16,10 +16,6 @@ library(DT)
 library(dplyr)
 library(shinycssloaders)
 
-
-#setwd('L:\\Lab\\CPHEA_TempUHI\\SCleland\\Dashboard')
-#setwd('C:\\Users\\SCLELA01\\OneDrive - Environmental Protection Agency (EPA)\\Profile\\Documents\\Dashboard_Temp')
-
 # Define color palettes
 palettes <- data.frame("Variable" = c("uhi","uhiq","hosp","temp","range","temp.99"), 
                        "Color" = c("RdYlBu","RdYlBu","PuRd","RdYlBu","Purple-Green","Heat"))
