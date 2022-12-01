@@ -14,9 +14,9 @@ RUN apt-get update && apt-get install -y \
     r-base-dev dh-r automake \
     libharfbuzz-dev  libfribidi-dev \
     libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev \
+    libgdal-dev \
     cmake \
     && apt-get clean
-
 WORKDIR /app
 
 # install renv & restore packages
