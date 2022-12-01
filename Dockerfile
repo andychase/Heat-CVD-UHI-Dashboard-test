@@ -5,7 +5,6 @@ LABEL name=Heat_CVD_UHI_Dashboard
 # Reset mirror
 RUN sed -i -e 's/http:\/\/archive\.ubuntu\.com\/ubuntu\//http:\/\/ubuntu\.osuosl\.org\/ubuntu/' /etc/apt/sources.list
 
-
 RUN apt-get update && apt-get install -y \
     libssl-dev \
     libxml2-dev \
@@ -14,7 +13,8 @@ RUN apt-get update && apt-get install -y \
     r-cran-rjava \
     r-base-dev dh-r automake \
     libharfbuzz-dev  libfribidi-dev \
-    libfreetype-dev \
+    libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev \
+    cmake \
     && apt-get clean
 
 WORKDIR /app
