@@ -15,6 +15,7 @@ RUN apt-get update && apt-get install -y \
     libharfbuzz-dev  libfribidi-dev \
     libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev \
     libgdal-dev \
+    libudunits2-dev \
     cmake \
     && apt-get clean
 WORKDIR /app
