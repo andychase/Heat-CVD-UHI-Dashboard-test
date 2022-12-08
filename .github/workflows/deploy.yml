@@ -46,16 +46,18 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
       
-  # deploy:
-  #   runs-on: ubuntu-latest
-  #   needs: build
-    
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - name: Deploy to cloud.gov
-  #       uses: cloud-gov/cg-cli-tools@main
-  #       with: 
-  #         cf_username: ${{ secrets.CG_USERNAME }}
-  #         cf_password: ${{ secrets.CG_PASSWORD }}
-  #         cf_org: ${{ secrets.CF_ORG }}
-  #         cf_space: ${{ secrets.CF_SPACE }}
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build-and-push-image
+  
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploy to cloud.gov
+        uses: cloud-gov/cg-cli-tools@main
+        with: 
+          cf_username: ${{ secrets.CG_USERNAME }}
+          cf_password: ${{ secrets.CG_PASSWORD }}
+          cf_org: ${{ secrets.CF_ORG }}
+          cf_space: ${{ secrets.CF_SPACE }}
+          command: cf delete Heat_CVD_UHI_Dashboard -f ; cf push -f manifest.yml
+

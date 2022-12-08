@@ -1,0 +1,17 @@
+---
+applications:
+- name: Heat_CVD_UHI_Dashboard
+  env:
+    STRATOS_PROJECT: '{"deploySource":{"type":"dockerimg","timestamp":1670526653,"applicationName":"Heat_CVD_UHI_Dashboard","dockerImage":"ghcr.io/usepa/heat-cvd-uhi-dashboard:docker-container","dockerUsername":""},"deployOverrides":{"name":"Heat_CVD_UHI_Dashboard","buildpack":"","startCmd":"","healthCheckType":"","stack":"","time":null,"instances":1,"diskQuota":"4096MB","memQuota":"","doNotStart":false,"noRoute":false,"randomRoute":true,"host":"","domain":"","path":"","dockerImage":"ghcr.io/usepa/heat-cvd-uhi-dashboard:docker-container","dockerUsername":""}}'
+  docker:
+    image: ghcr.io/usepa/heat-cvd-uhi-dashboard:docker-container
+  routes:
+  - route: heatcvduhidashboard-anxious-squirrel-hn.app.cloud.gov
+    protocol: http1
+  processes:
+  - type: web
+    instances: 1
+    memory: 1024M
+    disk_quota: 4096M
+    log-rate-limit-per-second: -1
+    health-check-type: port
