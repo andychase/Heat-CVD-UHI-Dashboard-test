@@ -55,12 +55,15 @@ jobs:
       steps:
         - uses: actions/checkout@v3
         - name: Scan image
+          id: scan
           uses: anchore/scan-action@v3
           with:
+            fail-build: false
             image: ${{needs.build-and-push-image.outputs.image_name}}
-            output-format: json
-            fail-build: true
-            severity-cutoff: critical
+        - name: upload Anchore scan SARIF report
+          uses: github/codeql-action/upload-sarif@v2
+          with:
+            sarif_file: ${{ steps.scan.outputs.sarif }}
 
   deploy:
     runs-on: ubuntu-latest
