@@ -11,12 +11,12 @@ ENV TZ=Etc/UTC
 ENV CRAN=https://packagemanager.posit.co/cran/__linux__/jammy/latest
 ENV LANG=en_US.UTF-8
 
-RUN /rocker/rocker/scripts/install_R_source.sh
-RUN /rocker/rocker/scripts/setup_R.sh
+RUN /rocker_scripts/scripts/install_R_source.sh
+RUN /rocker_scripts/scripts/setup_R.sh
 ENV S6_VERSION=v2.1.0.2
 ENV SHINY_SERVER_VERSION=latest
 ENV PANDOC_VERSION=default
-RUN /rocker/rocker/scripts/install_shiny_server.sh
+RUN /rocker_scripts/install_shiny_server.sh
 
 
 # I added this label, though it doesn't do anything
