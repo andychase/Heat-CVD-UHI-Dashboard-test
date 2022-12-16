@@ -3,6 +3,22 @@
 # The image is based off of ubuntu, but then runs a few scripts to install R and R shiny
 FROM rocker/shiny:latest
 
+COPY . /rocker
+
+ENV R_VERSION=4.2.2
+ENV R_HOME=/usr/local/lib/R
+ENV TZ=Etc/UTC
+ENV CRAN=https://packagemanager.posit.co/cran/__linux__/jammy/latest
+ENV LANG=en_US.UTF-8
+
+RUN /rocker/rocker_scripts/install_R_source.sh
+RUN /rocker/scripts/setup_R.sh
+ENV S6_VERSION=v2.1.0.2
+ENV SHINY_SERVER_VERSION=latest
+ENV PANDOC_VERSION=default
+RUN /rocker_scripts/install_shiny_server.sh
+
+
 # I added this label, though it doesn't do anything
 LABEL name=Heat_CVD_UHI_Dashboard
 

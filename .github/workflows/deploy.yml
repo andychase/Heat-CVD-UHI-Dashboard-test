@@ -19,6 +19,12 @@ jobs:
       packages: write
 
     steps:
+      - name: Checkout R shiny base image repository
+        uses: actions/checkout@v3
+        with:
+          repository: rocker-org/rocker-versioned2
+          path: rocker
+
       - name: Checkout repository
         uses: actions/checkout@v3
 
