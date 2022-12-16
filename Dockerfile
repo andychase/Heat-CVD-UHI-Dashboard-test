@@ -11,8 +11,8 @@ ENV TZ=Etc/UTC
 ENV CRAN=https://packagemanager.posit.co/cran/__linux__/jammy/latest
 ENV LANG=en_US.UTF-8
 
-RUN /rocker_scripts/scripts/install_R_source.sh
-RUN /rocker_scripts/scripts/setup_R.sh
+RUN /rocker_scripts/install_R_source.sh
+RUN /rocker_scripts/setup_R.sh
 ENV S6_VERSION=v2.1.0.2
 ENV SHINY_SERVER_VERSION=latest
 ENV PANDOC_VERSION=default
