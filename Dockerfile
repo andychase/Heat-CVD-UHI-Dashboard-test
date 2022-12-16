@@ -3,7 +3,7 @@
 # The image is based off of ubuntu, but then runs a few scripts to install R and R shiny
 FROM  ubuntu:jammy
 
-COPY . /rocker
+COPY ./rocker/rocker/scripts /rocker_scripts
 
 ENV R_VERSION=4.2.2
 ENV R_HOME=/usr/local/lib/R
